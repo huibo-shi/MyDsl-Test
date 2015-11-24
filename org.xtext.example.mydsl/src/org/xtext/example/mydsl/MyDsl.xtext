@@ -1,0 +1,18 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+
+Model:
+	actions+=Actions*;
+	
+Actions:
+	Input | Output
+	;
+
+Output:
+	'output' segment = STRING 'to' value = STRING
+;
+	
+Input :
+	'input' lastName = STRING 'as' value = STRING	
+;
